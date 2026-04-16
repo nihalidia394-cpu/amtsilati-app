@@ -1,0 +1,100 @@
+/* Reset Dasar */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* Gradasi halus agar tidak bosan */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Card Form */
+.container {
+    background: white;
+    padding: 40px;
+    width: 100%;
+    max-width: 450px; /* Lebih fleksibel untuk berbagai layar */
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+/* Efek hover pada card agar terasa interaktif */
+.container:hover {
+    transform: translateY(-5px);
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #546e7a;
+    font-weight: 600;
+}
+
+input,
+select {
+    padding: 12px;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: 2px solid #e0e0e0; /* Border sedikit lebih tebal & terang */
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+/* Efek saat input diklik */
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.2);
+}
+
+/* Button */
+button {
+    margin-top: 25px;
+    padding: 14px;
+    background: #2ecc71; /* Menggunakan hijau agar identik dengan nuansa pesantren/Amtsilati */
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background: #27ae60;
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
+}
+
+button:active {
+    transform: scale(0.98); /* Efek membal saat diklik */
+}
+
+/* Styling tambahan untuk pesan sukses/gagal jika nanti ditambah */
+.pesan {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
