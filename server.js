@@ -10,15 +10,22 @@ app.use(express.static('public'));
 
 app.post('/daftar', (req, res) => {
     const { nama, alamat, telepon } = req.body;
-    const sql = "INSERT INTO santri (nama, alamat, telepon) VALUES (?, ?, ?)";
-    
+
+    const sql = "INSERT INTO pendaftar (nama, alamat, telepon) VALUES (?, ?, ?)";
+
     db.query(sql, [nama, alamat, telepon], (err, result) => {
         if (err) {
             console.log(err);
-            res.status(500).send({ pesan: "Gagal simpan ke database" });
-        } else {
-            res.send({ status: "sukses", pesan: "Santri berhasil terdaftar!" });
+            return res.status(500).json({
+                status: "gagal",
+                pesan: err.message
+            });
         }
+
+        res.json({
+            status: "sukses",
+            pesan: "Santri berhasil terdaftar!"
+        });
     });
 });
 
