@@ -49,11 +49,11 @@
 </div>
 
 <script>
-    // Gunakan listener agar HTML tetap bersih dari atribut onsubmit
+    
     document.getElementById('formPendaftaran').addEventListener('submit', function(e) {
         e.preventDefault();
 
-        // Ambil elemen
+        
         const btn = document.getElementById('btnDaftar');
         const data = {
             nama: document.getElementById('nama').value,
@@ -75,7 +75,7 @@
         })
         .then(res => res.json())
         .then(data => {
-            alert(data.pesan); // Sesuaikan dengan key di server.js (pesan/message)
+            alert(data.pesan); 
             if(data.status === 'sukses') {
                 location.reload();
             }

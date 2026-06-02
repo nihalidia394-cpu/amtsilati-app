@@ -1,4 +1,4 @@
-/* Reset Dasar */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -14,19 +14,19 @@ body {
     min-height: 100vh;
 }
 
-/* Card Form */
+
 .container {
     background: white;
     padding: 40px;
     width: 100%;
-    max-width: 450px; /* Lebih fleksibel untuk berbagai layar */
+    max-width: 450px; 
     border-radius: 15px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     transform: translateY(0);
     transition: transform 0.3s ease;
 }
 
-/* Efek hover pada card agar terasa interaktif */
+
 .container:hover {
     transform: translateY(-5px);
 }
@@ -38,42 +38,34 @@ h1 {
     font-size: 28px;
 }
 
-/* Form */
-form {
-    display: flex;
-    flex-direction: column;
+
+.form-group {
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 15px;
 }
 
 label {
-    margin-top: 15px;
+    flex: 0 0 130px; 
+    text-align: left;
     font-size: 14px;
     color: #546e7a;
     font-weight: 600;
 }
 
-input,
-select {
-    padding: 12px;
-    margin-top: 6px;
+input, select {
+    flex: 1; 
+    padding: 10px;
+    border: 2px solid #e0e0e0;
     border-radius: 8px;
-    border: 2px solid #e0e0e0; /* Border sedikit lebih tebal & terang */
-    font-size: 15px;
-    transition: all 0.3s ease;
+    font-size: 14px;
 }
 
-/* Efek saat input diklik */
-input:focus,
-select:focus {
-    outline: none;
-    border-color: #3498db;
-    box-shadow: 0 0 8px rgba(52, 152, 219, 0.2);
-}
 
-/* Button */
 button {
     margin-top: 25px;
     padding: 14px;
-    background: #2ecc71; /* Menggunakan hijau agar identik dengan nuansa pesantren/Amtsilati */
+    background: #2ecc71; 
     border: none;
     color: white;
     font-size: 16px;
@@ -89,10 +81,10 @@ button:hover {
 }
 
 button:active {
-    transform: scale(0.98); /* Efek membal saat diklik */
+    transform: scale(0.98); 
 }
 
-/* Styling tambahan untuk pesan sukses/gagal jika nanti ditambah */
+
 .pesan {
     text-align: center;
     margin-top: 15px;

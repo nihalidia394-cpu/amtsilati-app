@@ -1,13 +1,13 @@
 const express = require('express');
 const app = express();
-const db = require('./db'); // Pastikan ini mengarah ke db.js kamu
+const db = require('./db'); 
 const cors = require('cors');
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static('public')); // Folder tempat index.html
+app.use(express.static('public')); 
 
-// JALUR UNTUK MENERIMA PENDAFTARAN
+
 app.post('/daftar', (req, res) => {
     const { nama, alamat, telepon } = req.body;
     const sql = "INSERT INTO santri (nama, alamat, telepon) VALUES (?, ?, ?)";
@@ -22,6 +22,8 @@ app.post('/daftar', (req, res) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log("Server running di http://localhost:3000");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server berjalan di port ${PORT}`);
 });
