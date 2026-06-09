@@ -5,6 +5,7 @@ const cors = require('cors');
 
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true })); // Menangani data form jika ada
 app.use(express.static('public'));
 
 // Test route
@@ -15,14 +16,13 @@ app.get('/tes', (req, res) => {
     });
 });
 
-// Route pendaftaran
+// Route pendaftaran (SUDAH DIPERBAIKI)
 app.post('/daftar', (req, res) => {
-
     const { nama, alamat, umur, jk, nohp } = req.body;
 
     const sql = `
-        INSERT INTO pendaftar
-        (nama, alamat, umur, jk, telepon)
+        INSERT INTO pendaftar 
+        (nama, alamat, umur, jk, telepon) 
         VALUES (?, ?, ?, ?, ?)
     `;
 
@@ -30,10 +30,8 @@ app.post('/daftar', (req, res) => {
         sql,
         [nama, alamat, umur, jk, nohp],
         (err, result) => {
-
             if (err) {
                 console.log("Error Database:", err);
-
                 return res.status(500).json({
                     status: "gagal",
                     pesan: err.message
