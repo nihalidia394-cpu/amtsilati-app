@@ -16,9 +16,4 @@
     "express": "^5.2.1",
     "mysql2": "^3.22.0"
   }
-  {
-  "scripts": {
-    "start": "node server.js"
-  }
-}
 }
